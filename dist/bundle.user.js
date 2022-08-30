@@ -80,7 +80,7 @@ var rollupUserScript = (function (exports) {
             React.createElement(ItemWithButton, { title: "my balls", description: "are on fire", buttonText: "wtf", callback: () => console.log('cock') })));
     };
 
-    function findAsync(filter, legacycompat) {
+    function findAsync(filter, legacycompat = true) {
         let foundModule = filter();
         if (foundModule !== undefined) {
             foundModule = Promise.resolve(foundModule);

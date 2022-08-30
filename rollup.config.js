@@ -19,6 +19,7 @@ export default {
     name: 'rollupUserScript',
     sourcemap: true,
   },
+  external: ['https://esm.sh/@cumjar/websmack', 'https://esm.sh/spitroast'],
   plugins: [
     replace({
       'process.env.NODE_ENV': JSON.stringify('production'),

@@ -1,3 +1,6 @@
+dist/dev.user.json
+dist/*.map
+
 # Logs
 logs
 *.log

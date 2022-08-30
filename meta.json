@@ -1,0 +1,9 @@
+{
+  "name": "PCML",
+  "description": "The Pathcord client mod loader",
+  "author": "Alyxia Sother",
+  "run-at": "document-start",
+  "include": ["https://patchcord.pw/*"],
+  "match": ["https://patchcord.pw/*"],
+  "grant": ["unsafeWindow"]
+}

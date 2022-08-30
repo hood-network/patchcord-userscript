@@ -1,0 +1,59 @@
+{
+  "name": "patchcord-userscript",
+  "version": "1.2.3",
+  "description": "Userscript for adding useful functionality to Patchcord.",
+  "keywords": [
+    "userscript",
+    "greasemonkey",
+    "tampermonkey",
+    "rollup",
+    "typescript",
+    "react"
+  ],
+  "homepage": "https://github.com/patchcordhn/patchcord-userscript",
+  "funding": "https://github.com/patchcordhn/patchcord-userscript/funding_links?fragment=1",
+  "repository": {
+    "type": "git",
+    "url": "github:patchcordhn/patchcord-userscript"
+  },
+  "bugs": {
+    "url": "https://github.com/patchcordhn/patchcord-userscript/issues"
+  },
+  "author": "cuzi",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx rollup --config rollup.config.js",
+    "watch": "npx rollup --config rollup.config.js --watch",
+    "serve": "node -r esm server.js",
+    "start": "node -r esm server.js",
+    "build:release": "npx rollup --config rollup.config.js --sourcemap 0 --file dist/release-$npm_package_version.user.js",
+    "build:release:win32": "npx rollup --config rollup.config.js --sourcemap 0 --file dist\\release-%npm_package_version%.user.js",
+    "version": "npm run build:release && git add dist/release-$npm_package_version.user.js",
+    "prepublishOnly": "npm run build:release && git add dist/release-$npm_package_version.user.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/plugin-proposal-class-properties": "^7.17.12",
+    "@babel/preset-react": "^7.17.12",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@types/react": "^18.0.9",
+    "colorette": "^2.0.16",
+    "esm": "^3.2.25",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "rollup": "^2.75.3",
+    "rollup-plugin-userscript-metablock": "^0.3.1",
+    "serve": "^13.0.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.2"
+  },
+  "config": {
+    "port": "8124"
+  }
+}
